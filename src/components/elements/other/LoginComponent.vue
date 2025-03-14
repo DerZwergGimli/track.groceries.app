@@ -66,7 +66,7 @@ const handleSignup = async () => {
 };
 
 const button_text = computed(() => {
-  return useSupabaseStore().user_email.length
+  return useSupabaseStore().user_email.length > 0
     ? useSupabaseStore().user_email
     : "Login";
 });
