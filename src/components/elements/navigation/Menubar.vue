@@ -23,19 +23,18 @@ const route = useRoute();
               route.path === '/' ? 'font-extrabold ' : '',
             ]"
           >
-            Home
+            <RouterLink to="/">Home</RouterLink>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuLink
-            href="/about"
             :class="[
               navigationMenuTriggerStyle(),
               route.path === '/about' ? 'font-extrabold ' : '',
             ]"
           >
-            About
+            <RouterLink to="/about">About</RouterLink>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </div>
