@@ -100,12 +100,12 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <Card class="mx-2">
+  <Card class="">
     <div class="flex items-center">
       <div>
         <CardHeader>
-          <CardTitle>Add Item</CardTitle>
-          <CardDescription> add items to a group</CardDescription>
+          <CardTitle>New Item</CardTitle>
+          <CardDescription>Add items to your stock list</CardDescription>
         </CardHeader>
       </div>
       <div class="ml-auto mr-5">

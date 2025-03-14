@@ -46,7 +46,7 @@ async function handleSubmit() {
 <template>
   <Card>
     <CardHeader>
-      <CardTitle>Group</CardTitle>
+      <CardTitle>Manage Groups</CardTitle>
       <CardDescription> fridge, storage, etc.</CardDescription>
     </CardHeader>
     <CardContent class="space-y-2">
