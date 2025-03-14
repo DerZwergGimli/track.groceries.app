@@ -112,7 +112,7 @@ const router = useRouter();
               </Button>
             </template>
             <template v-else>
-              <div class="flex gap-2">
+              <div class="w-full flex justify-between">
                 <Button
                   @click="
                     () => {
