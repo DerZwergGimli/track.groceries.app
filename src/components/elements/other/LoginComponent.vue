@@ -18,10 +18,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const email = ref("");
 const password = ref("");
 const errorMessage = ref("");
-const isSignUp = ref(false); // State for toggling between login and signup
 
 const isLoading = ref(false);
-const isDialogOpen = ref(false); // State to manage dialog visibility
 const router = useRouter();
 
 const handleLogin = async () => {

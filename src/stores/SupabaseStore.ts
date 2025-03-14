@@ -81,22 +81,22 @@ export const useSupabaseStore = defineStore("SpabaseStore", {
     //Fetch
     async fetchItems() {
       this.loading = true;
-      this.items = (await sb_fetchAll(this.supabase, "items")).sort((a, b) =>
-        a.name.localeCompare(b.name),
+      this.items = (await sb_fetchAll(this.supabase, "items")).sort(
+        (a: any, b: any) => a.name.localeCompare(b.name),
       );
       this.loading = false;
     },
     async fetchGroups() {
       this.loading = true;
-      this.groups = (await sb_fetchAll(this.supabase, "groups")).sort((a, b) =>
-        a.name.localeCompare(b.name),
+      this.groups = (await sb_fetchAll(this.supabase, "groups")).sort(
+        (a: any, b: any) => a.name.localeCompare(b.name),
       );
       this.loading = false;
     },
     async fetchTags() {
       this.loading = true;
-      this.tags = (await sb_fetchAll(this.supabase, "tags")).sort((a, b) =>
-        a.name.localeCompare(b.name),
+      this.tags = (await sb_fetchAll(this.supabase, "tags")).sort(
+        (a: any, b: any) => a.name.localeCompare(b.name),
       );
       this.loading = false;
     },

@@ -58,10 +58,22 @@ watchDebounced(
   item.value,
   async () => {
     if (item.value.name.length >= 3) {
-      const query = item.value.name;
-      pexels.photos.search({ query, per_page: 1 }).then((photos) => {
-        item.value.image = photos?.photos[0].src.original;
-      });
+      try {
+        const query = item.value.name.trim();
+        const data = await pexels.photos.search({
+          query,
+          per_page: 1,
+        });
+
+        if ("photos" in data) {
+          // Only access `photos` if it exists in the response
+          item.value.image = data.photos[0]?.src?.original || "";
+        } else {
+          console.error("No photos found or invalid response:", data);
+        }
+      } catch (error) {
+        console.error("Error while searching for photos:", error);
+      }
     }
   },
   { debounce: 2000, maxWait: 5000 },
