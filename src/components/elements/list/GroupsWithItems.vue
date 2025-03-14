@@ -78,6 +78,10 @@ const router = useRouter();
               df.format(Date.parse(item.date_bestTill as any) as any)
             }}</span>
           </p>
+          <p class="text-xs flex justify-between">
+            <span class="text-gray-500">unit</span>
+            <span>{{ item.unit?.toUpperCase() }}</span>
+          </p>
           <div class="mt-2 flex gap-2 items-center">
             <template v-if="item.amount > 0">
               <Button
@@ -91,12 +95,14 @@ const router = useRouter();
               >
                 -
               </Button>
-              <Input
-                type="text"
-                @change="useSupabaseStore().updateItem(item, item.id)"
-                v-model.number="item.amount"
-                class="flex-1 text-center"
-              />
+              <div class="flex items-center">
+                <Input
+                  type="text"
+                  @change="useSupabaseStore().updateItem(item, item.id)"
+                  v-model.number="item.amount"
+                  class="flex-1 text-center border-0"
+                ></Input>
+              </div>
               <Button
                 class="px-4"
                 @click="
